@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Menu Hack</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    body {
+      background: url('https://files.catbox.moe/xdp89x.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .menu-box {
+      background: rgba(0, 0, 0, 0.75);
+      width: 420px;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 50px auto;
+    }
+    .title {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      accent-color: #00ff00;
+      cursor: pointer;
+    }
+    .checkbox-label {
+      color: #00ff00;
+      font-weight: bold;
+      user-select: none;
+    }
+    .label-gray {
+      color: #cccccc;
+      font-weight: normal;
+    }
+    .fov-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .fov-container input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #888;
+      outline: none;
+      border-radius: 0;
+    }
+    .fov-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      border-radius: 0;
+    }
+    .fov-value {
+      color: #ccc;
+      min-width: 70px;
+      text-align: right;
+      font-size: 14px;
+    }
+    .footer {
+      font-size: 14px;
+      color: #00ff00;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .footer a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-box">
+    <div class="title">Menu Antiband Free Fire</div>
+
+    <div class="section">
+      <input type="checkbox" id="aim">
+      <label class="checkbox-label" for="aim">Aim</label>
+    </div>
+    <div class="section">
+      <input type="checkbox" id="norecoil">
+      <label class="checkbox-label" for="norecoil">Norecoil</label>
+    </div>
+    <div class="section">
+      <input type="checkbox" id="sensi">
+      <label class="checkbox-label" for="sensi">Sensitivity+100</label>
+    </div>
+    <div class="section">
+      <input type="checkbox" id="buff">
+      <label class="checkbox-label" for="buff">Buff 120hz</label>
+    </div>
+
+    <div class="section fov-container">
+      <span class="label-gray">FOV Glow</span>
+      <input type="range" id="fovSlider" min="0" max="100" value="0">
+      <span class="fov-value" id="fovValue">AimFov 0</span>
+    </div>
+
+    <div class="footer">
+      Menu By 
+      <a href="https://www.facebook.com/share/15cfobJRNJ/?mibextid=wwXIfr" target="_blank">
+        Bùi Hoàng Hải
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Tự động ẩn thanh tìm kiếm (Android)
+    window.addEventListener("load", () => {
+      window.scrollTo(0, 1);
+    });
+
+    // Cập nhật FOV
+    const fovSlider = document.getElementById("fovSlider");
+    const fovValue = document.getElementById("fovValue");
+    fovSlider.oninput = function () {
+      fovValue.innerText = 'AimFov ' + this.value;
+    };
+  </script>
+</body>
+</html>
